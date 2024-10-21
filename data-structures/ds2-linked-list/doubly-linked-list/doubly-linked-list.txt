@@ -1,0 +1,7 @@
+## Python
+
+Implement a doubly-linked list with the methods:
+- insert
+- remove
+- print_linked_list
+- size

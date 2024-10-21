@@ -4,7 +4,7 @@ Data structures and Algorithms are a necessary for any good programmer to effect
 
 ## Python
 
-`pytest -v .\data-structures\ds1-array\calcudoku\{username}-python\calcudoku-test.py`
+`pytest -v .\data-structures\ds1-array\calcudoku\{username}-python\calcudoku_test.py`
 
 ## Javascript
 
