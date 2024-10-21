@@ -20,12 +20,11 @@ class Calcudoku:
             Returns:
                 None
         """
-        
         with open(filename) as f:
             for i, line in enumerate(f):
                 if i == 0:
                     self.num_cages = int(line)
-                    continue                
+                    continue
                 
                 cage_split = line.strip().split()
                 cage_sum = int(cage_split[0])

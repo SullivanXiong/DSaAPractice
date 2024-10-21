@@ -1,7 +1,7 @@
 ## Python
 
 Implement a linked list with the methods:
-- insert
-- remove
-- print_linked_list
-- size
+- insert(value)
+- remove(index)
+- print_linked_list()
+- size()

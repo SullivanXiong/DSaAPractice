@@ -3,7 +3,7 @@ Calcudoku Puzzle Solver: Instructions
 Calcudoku is a logic puzzle that requires you to fill a grid with numbers. Each number in the grid must follow these rules:
 
 Row/Column Rule: Each number in the grid must be unique within its row and column (similar to Sudoku).
-Cage Rule: The grid is divided into cages, and each cage has a target result and an arithmetic operation. The numbers in the cage must satisfy the target number using the given operation.
+Cage Rule: The grid is divided into cages, and each cage has a target result, assume addition for all operations.
 
 Puzzle Input Format:
 Line 1: Number of cages.

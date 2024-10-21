@@ -1,0 +1,16 @@
+1 a
+2 a -> b
+1 a
+2 a -> c
+1 a
+0 None
+1 d
+2 d -> e
+3 d -> e -> f
+4 d -> e -> f -> g
+5 d -> e -> f -> g -> h
+6 d -> e -> f -> g -> h -> i
+5 d -> e -> f -> g -> h
+4 d -> e -> f -> g
+3 d -> e -> f
+4 d -> e -> f -> j
