@@ -60,3 +60,5 @@ Output Example:
 The output is a space-seperated stdout of a 5x5 grid.
 
 You can assume that the grid will always be 5x5, and all inputs will be valid.
+
+the value in each cell cannot exceed 5.
