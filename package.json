@@ -1,0 +1,26 @@
+{
+  "name": "dsaapractice",
+  "version": "1.0.0",
+  "description": "Data structures and Algorithms are a necessary for any good programmer to effectively push out tasks and features with the best implementation at hand. This repository will contain some common data structures and algorithms and allows users to run test cases against their code.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SullivanXiong/DSaAPractice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SullivanXiong/DSaAPractice/issues"
+  },
+  "homepage": "https://github.com/SullivanXiong/DSaAPractice#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testMatch": []
+  }
+}

@@ -52,6 +52,7 @@ class Calcudoku:
         
         while row < 5:
             self.matrix[row][col] += 1
+            print(self.format_matrix())
             
             if self.matrix[row][col] > 5:
                 self.matrix[row][col] = 0
@@ -70,7 +71,6 @@ class Calcudoku:
                 else:
                     col += 1
             elif self.matrix[row][col] == 5:
-                print(self.format_matrix())
                 self.matrix[row][col] = 0
                 if col == 0:
                     col = 4
@@ -135,7 +135,6 @@ class Calcudoku:
             if not cage_completed:
                 continue
                 
-            print(_sum, cage_sum)
             if _sum != cage_sum:
                 return False
             
@@ -161,7 +160,7 @@ if __name__ == "__main__":
     test_directory = os.path.join(current_directory, "../test")
 
     calcudoku = Calcudoku()
-    calcudoku.read_cages(test_directory + "/0.test")
+    calcudoku.read_cages(test_directory + "/3.test")
     print(calcudoku.num_cages)
     print(calcudoku.cages)
     print(calcudoku.cage_sums)

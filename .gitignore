@@ -17,3 +17,6 @@ dist/
 
 # Pytest Cache
 .pytest_cache/
+
+# Node modules
+node_modules/
