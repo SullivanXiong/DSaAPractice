@@ -51,7 +51,6 @@ class Calcudoku:
         
         while row < 5:
             self.matrix[row][col] += 1
-            print(self.format_matrix())
             
             if self.matrix[row][col] > 5:
                 self.matrix[row][col] = 0
@@ -156,10 +155,10 @@ if __name__ == "__main__":
     current_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Directory where the test files are located (relative to the test script)
-    test_directory = os.path.join(current_directory, "../test")
+    test_directory = os.path.abspath(os.path.join(current_directory, "../test"))
 
     calcudoku = Calcudoku()
-    calcudoku.read_cages(test_directory + "/3.test")
+    calcudoku.read_cages(test_directory + "/0.test")
     print(calcudoku.num_cages)
     print(calcudoku.cages)
     print(calcudoku.cage_sums)
