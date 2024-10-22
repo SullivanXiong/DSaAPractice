@@ -20,6 +20,9 @@ class Calcudoku:
             Returns:
                 None
         """
+        f = open("0.test", "r")
+        print(f.read())
+
         pass
 
     def solve(self):
