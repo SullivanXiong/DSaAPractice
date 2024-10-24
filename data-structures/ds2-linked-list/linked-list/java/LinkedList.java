@@ -24,7 +24,7 @@ public class LinkedList<Node> {
         size = 0;
     }
 
-    public void add(Object value, int index) {
+    public void add(Object value, int index) throws IndexOutOfBoundsException {
     }
     
     public void addFirst(Object value) {
@@ -33,15 +33,15 @@ public class LinkedList<Node> {
     public void addLast(Object value) {
     }
 
-    public Object remove(int index) {
+    public Object remove(int index) throws IndexOutOfBoundsException {
         return null;
     }
 
-    public Object removeFirst() {
+    public Object removeFirst() throws IndexOutOfBoundsException {
         return null;
     }
 
-    public Object removeLast() {
+    public Object removeLast() throws IndexOutOfBoundsException {
         return null;
     }
 

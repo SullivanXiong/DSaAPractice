@@ -84,14 +84,22 @@ public class LinkedList<Node> {
         return value;
     }
 
-    public Object removeFirst() {
+    public Object removeFirst() throws IndexOutOfBoundsException {
+        if (size == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+
         Object value = head.get().value;
         head = head.get().next;
         size--;
         return value;
     }
 
-    public Object removeLast() {
+    public Object removeLast() throws IndexOutOfBoundsException {
+        if (size == 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        
         Object value;
         if (size == 1) {
             value = head.get().value;
