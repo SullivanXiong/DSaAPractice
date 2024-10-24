@@ -27,7 +27,7 @@ class LinkedList {
    *             the value is inserted at the end of the linked list.
    * @returns None
    */
-  add(value: any, index: number = -1): undefined {}
+  add(value: any, index: number = NaN): undefined {}
 
   /**
    * Insert a new node as the new head of the list.
@@ -51,7 +51,7 @@ class LinkedList {
    * @param index The index at which the value should be inserted
    * @returns The value of the node that was removed
    */
-  remove(index: number = -1): any {}
+  remove(index: number = NaN): any {}
 
   /**
    * Remove the first node from the linked list.

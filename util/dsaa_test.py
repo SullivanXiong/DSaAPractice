@@ -1,5 +1,4 @@
 import argparse
-import json
 import os
 
 DS = "data-structures"
@@ -10,10 +9,6 @@ LANGUAGES = {
     "js": "javascript",
     "java": "java"
 }
-
-# build a cli tool to test the dsaa module with the following commands:
-# 1. test --type all --username <username>
-# 2. test --type module --module <module> --language <py, js, java> --username <username>
 
 class TestDSAA:
     def __init__(self, args, existing_modules):
@@ -69,10 +64,10 @@ class TestDSAA:
         
         match language:
             case "python":
-                python_command = f'pytest -v ./{project_path}/{project}_test.py'
+                python_command = f'pytest -v ./{project_path}/{dash_to_snake(project)}_test.py'
                 os.system(python_command)
             case "javascript":
-                javascript_command = f'jest ./{project_path}/{project}Test.js'
+                javascript_command = f'jest ./{project_path}/{dash_to_camel(project)}Test.js'
                 os.system(javascript_command)
             case "java":
                 java_tests = os.listdir(f"{DS}/{module}/{project}/java")
@@ -115,6 +110,15 @@ def dash_to_pascal(text):
     words = text.split("-")
     words = [word.capitalize() for word in words]
     return "".join(words)
+
+def dash_to_camel(text):
+    words = text.split("-")
+    words = [words[0]] + [word.capitalize() for word in words[1:]]
+    return "".join(words)
+
+def dash_to_snake(text):
+    words = text.split("-")
+    return "_".join(words)
     
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Test DSAA module")
