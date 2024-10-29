@@ -21,10 +21,11 @@ class Calcudoku:
                 None
         """
         with open(filename) as f:
-            for i, line in enumerate(f): #enumerate: places iterable in indexed list
-                if i == 0:
+            for i, line in enumerate(f):         #enumerate: places iterable in indexed list
+                if i == 0:                       #if index == 0, then set self.num_cages as int
                     self.num_cages = int(line)
                     continue
+
             
 
 
