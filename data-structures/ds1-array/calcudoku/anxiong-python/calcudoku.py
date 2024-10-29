@@ -20,10 +20,13 @@ class Calcudoku:
             Returns:
                 None
         """
-        f = open("0.test", "r")
-        print(f.read())
+        with open(filename) as f:
+            for i, line in enumerate(f): #enumerate: places iterable in indexed list
+                if i == 0:
+                    self.num_cages = int(line)
+                    continue
+            
 
-        pass
 
     def solve(self):
         """ Solve the Calcudoku puzzle by filling in the matrix with the
