@@ -28,6 +28,8 @@ class Calcudoku:
 
             
 
+            
+
 
     def solve(self):
         """ Solve the Calcudoku puzzle by filling in the matrix with the
