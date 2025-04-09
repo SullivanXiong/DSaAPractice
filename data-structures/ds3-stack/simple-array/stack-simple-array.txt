@@ -1,0 +1,9 @@
+Create a stack by simply using an array with these methods:
+- push(value)
+    - if full, StackOverflowError("Stack is full")
+- pop()
+    - if empty, "Stack is empty"
+- peek()
+    - if empty, "Stack is empty"
+- get_size()
+- is_empty()
