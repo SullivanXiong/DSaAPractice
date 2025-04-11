@@ -67,7 +67,7 @@ class TestDSAA:
                 python_command = f'pytest -v ./{project_path}/{dash_to_snake(project)}_test.py'
                 os.system(python_command)
             case "javascript":
-                js_tests = os.listdir(f"{DS}/{module}/{project}/java")
+                js_tests = os.listdir(f"{DS}/{module}/{project}/javascript")
                 js_or_ts = "ts" if js_tests[0].endswith("ts") else "js"
                 javascript_command = f'jest ./{project_path}/{dash_to_camel(project)}Test.{js_or_ts}'
                 os.system(javascript_command)

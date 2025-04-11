@@ -18,9 +18,14 @@
   },
   "homepage": "https://github.com/SullivanXiong/DSaAPractice#readme",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.1",
+    "typescript": "^5.8.3"
   },
   "jest": {
-    "testMatch": []
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testRegex": ".*Test\\.(ts|js)$"
   }
 }
