@@ -139,27 +139,27 @@ describe("LinkedList", () => {
     linkedList.set("NewLast", 2);
     expect(linkedList.getSize()).toBe(3);
 
-    expect(() => linkedList.remove(3)).toThrowError(RangeError);
+    expect(() => linkedList.remove(3)).toThrow(RangeError);
     expect(linkedList.getSize()).toBe(3);
 
-    expect(() => linkedList.remove(-1)).toThrowError(RangeError);
+    expect(() => linkedList.remove(-1)).toThrow(RangeError);
     expect(linkedList.getSize()).toBe(3);
   });
 
-  test("Integration: add and set and remove empty", () => {
+  test("Integration: remove empty", () => {
     expect(linkedList.getSize()).toBe(0);
 
-    expect(() => linkedList.removeFirst()).toThrowError(RangeError);
+    expect(() => linkedList.removeFirst()).toThrow(RangeError);
     expect(linkedList.getSize()).toBe(0);
 
-    expect(() => linkedList.removeLast()).toThrowError(RangeError);
+    expect(() => linkedList.removeLast()).toThrow(RangeError);
     expect(linkedList.getSize()).toBe(0);
 
-    expect(() => linkedList.remove(0)).toThrowError(RangeError);
+    expect(() => linkedList.remove(0)).toThrow(RangeError);
     expect(linkedList.getSize()).toBe(0);
   });
 
-  test("Integration: add and set and remove one", () => {
+  test("Integration: remove one", () => {
     linkedList.addFirst("First");
     expect(linkedList.getSize()).toBe(1);
 
