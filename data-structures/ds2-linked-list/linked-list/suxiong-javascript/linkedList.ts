@@ -246,4 +246,13 @@ export class LL<T> {
   getSize(): number {
     return this.size;
   }
+
+  /**
+   * Check if the linked list is empty.
+   *
+   * @returns True if the linked list is empty, false otherwise
+   */
+  isEmpty(): boolean {
+    return this.size === 0;
+  }
 }

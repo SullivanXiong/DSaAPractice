@@ -46,7 +46,18 @@ class TestDSAA:
             print("Invalid test type")
 
     def test_all(self):
-        print(f"Testing all modules for {self.args.username}")
+        if self.args.language not in LANGUAGES:
+            print(f"Invalid language: {self.args.language}")
+            return
+        
+        language = LANGUAGES[self.args.language]
+        
+        print(f"Testing all modules for {self.args.username} in {language}")
+        
+        for dsaa, modules in self.existing_modules.items():
+            for module, projects in modules.items():
+                for project in projects:
+                    self.test_module(dsaa, module, project)
 
     def test_module(self, dsaa, module, project):
         if self.args.language not in LANGUAGES:

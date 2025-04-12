@@ -54,7 +54,7 @@ export class LinkedListStack<T> {
    *
    * @returns The number of elements in the stack.
    */
-  size(): number {
+  getSize(): number {
     return this.list.getSize();
   }
 }
