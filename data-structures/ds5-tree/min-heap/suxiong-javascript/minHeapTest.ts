@@ -27,15 +27,12 @@ describe("MinHeap", () => {
     heap.insert(15);
     heap.insert(3);
 
-    heap.print();
     expect(heap.getMin()).toBe(3);
 
     heap.removeMin();
-    heap.print();
     expect(heap.getMin()).toBe(5);
 
     heap.removeMin();
-    heap.print();
     expect(heap.getMin()).toBe(10);
 
     heap.removeMin();
