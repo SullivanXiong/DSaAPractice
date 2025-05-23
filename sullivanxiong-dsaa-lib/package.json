@@ -1,6 +1,6 @@
 {
   "name": "@sullivanxiong/dsaa",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Data Structures and Algorithms implementations by Sullivan Xiong",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
