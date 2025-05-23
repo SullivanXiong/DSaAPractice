@@ -1,6 +1,6 @@
 {
   "name": "@sullivanxiong/dsaa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Data Structures and Algorithms implementations by Sullivan Xiong",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "publish": "npm publish --access public"
   },
   "author": "Sullivan Xiong",
   "license": "MIT"
