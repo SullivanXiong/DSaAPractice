@@ -262,4 +262,9 @@ export class LinkedList<T> {
   public getHead(): Node<T> | null {
     return this.head;
   }
+
+  public clear(): void {
+    this.head = null;
+    this.size = 0;
+  }
 }
