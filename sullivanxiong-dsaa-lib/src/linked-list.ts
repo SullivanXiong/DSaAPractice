@@ -1,6 +1,6 @@
 import { Node } from "./node";
 
-export class LL<T> {
+export class LinkedList<T> {
   protected size: number;
   protected head: Node<T> | null;
 
@@ -261,5 +261,10 @@ export class LL<T> {
 
   public getHead(): Node<T> | null {
     return this.head;
+  }
+
+  public clear(): void {
+    this.head = null;
+    this.size = 0;
   }
 }
