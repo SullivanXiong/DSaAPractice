@@ -1,16 +1,8 @@
-class LLNode<T> {
-  value: T;
-  next: LLNode<T> | null;
-
-  constructor(value: T, next: LLNode<T> | null = null) {
-    this.value = value;
-    this.next = next;
-  }
-}
+import { Node } from "./node";
 
 export class LL<T> {
-  size: number;
-  head: LLNode<T> | null;
+  protected size: number;
+  protected head: Node<T> | null;
 
   constructor() {
     this.size = 0;
@@ -27,23 +19,30 @@ export class LL<T> {
    *             the value is inserted at the end of the linked list.
    * @throws RangeError if the index is out of bounds
    */
-  add(value: T, index: number = NaN) {
-    let newNode = new LLNode(value);
+  public add(value: T, index?: number): void {
+    let newNode = new Node(value);
+
+    if (index === undefined) {
+      index = this.size;
+    }
     if (index < 0 || index > this.size) {
       throw new RangeError("Index out of bounds");
     }
+
     if (index === 0) {
       newNode.next = this.head;
       this.head = newNode;
     } else {
-      let current = this.head;
+      let current = this.head as Node<T>;
+
+      // Traverse to the node before the specified index
       for (let i = 0; i < index - 1; i++) {
-        current = current?.next || null;
+        current = current.next as Node<T>;
       }
-      newNode.next = current?.next || null;
-      if (current) {
-        current.next = newNode;
-      }
+
+      // Insert the new node at the specified index
+      newNode.next = current.next;
+      current.next = newNode;
     }
     this.size++;
   }
@@ -53,8 +52,9 @@ export class LL<T> {
    *
    * @param value The value to be inserted in the linked list
    */
-  addFirst(value: T) {
-    let newNode = new LLNode(value, this.head);
+  public addFirst(value: T) {
+    // Create a new node with the given value and set its next pointer to the current head
+    let newNode = new Node(value, this.head);
     this.head = newNode;
     this.size++;
   }
@@ -64,12 +64,15 @@ export class LL<T> {
    *
    * @param value The value to be inserted in the linked list
    */
-  addLast(value: T) {
-    let newNode = new LLNode(value);
+  public addLast(value: T) {
+    let newNode = new Node(value);
+
+    // If the list is empty, set the new node as the head
     if (!this.head) {
       this.head = newNode;
     } else {
       let current = this.head;
+
       while (current.next) {
         current = current.next;
       }
@@ -86,7 +89,21 @@ export class LL<T> {
    * @throws Error if the index is out of bounds
    * @throws RangeError if the list is empty
    */
-  remove(index: number = NaN): T | undefined {
+  public remove(index?: number): T {
+    if (index === undefined) {
+      index = this.size - 1;
+    }
+
+    if (index === 0) {
+      if (!this.head) {
+        throw new RangeError("List is empty");
+      }
+      const removedValue = this.head.value;
+      this.head = this.head.next;
+      this.size--;
+      return removedValue;
+    }
+
     if (index < 0 || index >= this.size) {
       throw new RangeError("Index out of bounds");
     }
@@ -95,18 +112,14 @@ export class LL<T> {
       throw new RangeError("List is empty");
     }
 
-    if (index === 0) {
-      const removedValue = this.head?.value;
-      this.head = this.head?.next || null;
-      this.size--;
-      return removedValue;
-    }
-    let current: LLNode<T> | null = this.head;
+    let current = this.head as Node<T>;
+
     for (let i = 0; i < index - 1; i++) {
-      current = current?.next || null;
+      current = current.next as Node<T>;
     }
-    const removedValue = current?.next?.value;
-    current!.next = current?.next?.next || null;
+
+    const removedValue = (current.next as Node<T>).value;
+    current.next = (current.next as Node<T>).next;
     this.size--;
     return removedValue;
   }
@@ -117,7 +130,7 @@ export class LL<T> {
    * @returns The value of the node that was removed
    * @throws RangeError if the list is empty
    */
-  removeFirst(): T | undefined {
+  removeFirst(): T {
     if (!this.head) {
       throw new RangeError("List is empty");
     }
@@ -134,25 +147,25 @@ export class LL<T> {
    * @returns The value of the node that was removed, otherwise undefined if empty
    * @throws RangeError if the list is empty
    */
-  removeLast(): T | undefined {
+  removeLast(): T {
     if (!this.head) {
       throw new RangeError("List is empty");
     }
 
     if (this.size === 1) {
-      const removedValue = this.head.value;
+      const removedValue = this.head.value as T;
       this.head = null;
       this.size--;
       return removedValue;
     }
 
-    let current = this.head;
+    let current = this.head as Node<T>;
     while (current?.next?.next) {
-      current = current.next;
+      current = current.next as Node<T>;
     }
 
-    const removedValue = current?.next?.value;
-    current!.next = null;
+    const removedValue = (current.next as Node<T>)?.value as T;
+    current.next = null;
     this.size--;
     return removedValue;
   }
@@ -164,59 +177,48 @@ export class LL<T> {
    * @returns The value of the node at the specified index
    * @throws RangeError if the index is out of bounds
    */
-  get(index: number): T | undefined {
+  public get(index: number): T {
     if (index < 0 || index >= this.size) {
       throw new RangeError("Index out of bounds");
     }
-    let current = this.head;
+
+    let current = this.head as Node<T>;
     for (let i = 0; i < index; i++) {
-      current = current?.next || null;
+      current = current.next as Node<T>;
     }
-    return current?.value;
+    return current.value;
   }
 
   /**
    * Get the value of the first node in the linked list.
    *
    * @returns The value of the first node in the linked list
+   * @throws RangeError if the list is empty
    */
-  getFirst(): T | undefined {
-    return this.head?.value;
+  public getFirst(): T {
+    if (!this.head) {
+      throw new RangeError("List is empty");
+    }
+
+    return this.head.value;
   }
 
   /**
    * Get the value of the last node in the linked list.
    *
    * @returns The value of the last node in the linked list
+   * @throws RangeError if the list is empty
    */
-  getLast(): T | undefined {
-    if (!this.head) return undefined;
-    let current = this.head;
-    while (current?.next) {
-      current = current.next;
-    }
-    return current?.value;
-  }
-
-  /**
-   * Set the value of the node at the specified index.
-   *
-   * @param value The value to be set in the linked list
-   * @param index The index at which the value should be set
-   * @throws RangeError if the index is out of bounds
-   */
-  set(value: T, index: number) {
-    if (index < 0 || index >= this.size) {
-      throw new RangeError("Index out of bounds");
+  public getLast(): T {
+    if (!this.head) {
+      throw new RangeError("List is empty");
     }
 
     let current = this.head;
-    for (let i = 0; i < index; i++) {
-      current = current?.next || null;
+    while (current.next) {
+      current = current.next as Node<T>;
     }
-    if (current) {
-      current.value = value;
-    }
+    return current.value;
   }
 
   /**
@@ -227,8 +229,9 @@ export class LL<T> {
    * Example:
    * For a linked list with values [1, 2, 3], the string representation would be "1 -> 2 -> 3"
    */
-  formatLinkedList(): string {
+  public formatLinkedList(): string {
     if (!this.head) return "Empty List";
+
     let current = this.head;
     let result = `${current.value}`;
     while (current.next) {
@@ -243,7 +246,7 @@ export class LL<T> {
    *
    * @returns The size of the linked list as an integer
    */
-  getSize(): number {
+  public getSize(): number {
     return this.size;
   }
 
@@ -252,7 +255,11 @@ export class LL<T> {
    *
    * @returns True if the linked list is empty, false otherwise
    */
-  isEmpty(): boolean {
+  public isEmpty(): boolean {
     return this.size === 0;
+  }
+
+  public getHead(): Node<T> | null {
+    return this.head;
   }
 }

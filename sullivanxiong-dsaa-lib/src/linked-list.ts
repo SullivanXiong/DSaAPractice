@@ -91,7 +91,17 @@ export class LinkedList<T> {
    */
   public remove(index?: number): T {
     if (index === undefined) {
-      return this.removeLast() as T;
+      index = this.size - 1;
+    }
+
+    if (index === 0) {
+      if (!this.head) {
+        throw new RangeError("List is empty");
+      }
+      const removedValue = this.head.value;
+      this.head = this.head.next;
+      this.size--;
+      return removedValue;
     }
 
     if (index < 0 || index >= this.size) {
@@ -100,10 +110,6 @@ export class LinkedList<T> {
 
     if (!this.head) {
       throw new RangeError("List is empty");
-    }
-
-    if (index === 0) {
-      return this.removeFirst() as T;
     }
 
     let current = this.head as Node<T>;
