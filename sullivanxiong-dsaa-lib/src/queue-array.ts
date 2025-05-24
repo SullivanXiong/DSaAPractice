@@ -5,8 +5,10 @@ export class QueueSimpleArray<T> implements Clearable<T> {
   protected front: number;
   protected rear: number;
   protected size: number;
+  protected capacity: number;
 
   constructor(capacity: number) {
+    this.capacity = capacity;
     this.array = new Array(capacity);
     this.front = 0;
     this.rear = -1;
