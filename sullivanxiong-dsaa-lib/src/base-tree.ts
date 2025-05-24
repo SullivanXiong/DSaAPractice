@@ -1,7 +1,7 @@
 import { Tree, TreeNode } from "./tree";
 
 export abstract class BaseTree<T> implements Tree<T> {
-  protected root: TreeNode<T> | null;
+  root: TreeNode<T> | null;
 
   constructor() {
     this.root = null;
