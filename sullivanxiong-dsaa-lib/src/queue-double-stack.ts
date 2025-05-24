@@ -1,7 +1,7 @@
 import { Clearable } from "./clearable";
-import { LinkedListStack as Stack } from "./stack-linked-list";
+import { StackLinkedList as Stack } from "./stack-linked-list";
 
-export class DoubleStackQueue<T> implements Clearable<T> {
+export class QueueDoubleStack<T> implements Clearable<T> {
   private enqueueStack: Stack<T>;
   private dequeueStack: Stack<T>;
 

@@ -1,6 +1,6 @@
 import { Clearable } from "./clearable";
 
-export class SimpleArrayQueue<T> implements Clearable<T> {
+export class QueueSimpleArray<T> implements Clearable<T> {
   private array: Array<T>;
   private front: number;
   private rear: number;
