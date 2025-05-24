@@ -12,7 +12,7 @@ export class DDNode<T> {
   }
 }
 
-class DoublyLinkedList<T> implements Clearable<T> {
+export class DoublyLinkedList<T> implements Clearable<T> {
   head: DDNode<T> | null;
   tail: DDNode<T> | null;
   length: number;

@@ -1,2 +1,11 @@
 // src/index.ts
+export * from "./binary-search-tree";
+export * from "./doubly-linked-list";
 export * from "./linked-list";
+export * from "./max-heap";
+export * from "./min-heap";
+export * from "./queue-array";
+export * from "./queue-double-stack";
+export * from "./queue-linked-list";
+export * from "./stack-array";
+export * from "./stack-linked-list";
