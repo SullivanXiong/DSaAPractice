@@ -7,7 +7,7 @@ import { Clearable } from "./clearable";
  * @template T The type of the elements in the heap
  */
 export class MaxHeap<T> implements Clearable<T> {
-  private heap: T[] = [];
+  protected heap: T[] = [];
 
   constructor() {
     this.heap = [];

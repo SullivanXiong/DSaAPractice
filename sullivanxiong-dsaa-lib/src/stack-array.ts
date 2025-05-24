@@ -1,7 +1,7 @@
 import { Clearable } from "./clearable";
 
 export class StackSimpleArray<T> implements Clearable<T> {
-  private stack: T[];
+  protected stack: T[];
 
   constructor() {
     this.stack = [];

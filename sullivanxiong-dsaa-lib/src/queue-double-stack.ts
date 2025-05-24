@@ -2,8 +2,8 @@ import { Clearable } from "./clearable";
 import { StackLinkedList as Stack } from "./stack-linked-list";
 
 export class QueueDoubleStack<T> implements Clearable<T> {
-  private enqueueStack: Stack<T>;
-  private dequeueStack: Stack<T>;
+  protected enqueueStack: Stack<T>;
+  protected dequeueStack: Stack<T>;
 
   constructor() {
     this.enqueueStack = new Stack<T>();

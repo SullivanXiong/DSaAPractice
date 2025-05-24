@@ -2,7 +2,7 @@ import { Clearable } from "./clearable";
 import { LinkedList } from "./linked-list";
 
 export class QueueLinkedList<T> implements Clearable<T> {
-  private linkedList: LinkedList<T>;
+  protected linkedList: LinkedList<T>;
 
   constructor() {
     this.linkedList = new LinkedList<T>();
