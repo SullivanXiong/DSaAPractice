@@ -1,6 +1,7 @@
+import { Clearable } from "./clearable";
 import { Node } from "./node";
 
-export class LinkedList<T> {
+export class LinkedList<T> implements Clearable<T> {
   protected size: number;
   protected head: Node<T> | null;
 
