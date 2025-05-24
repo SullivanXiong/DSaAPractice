@@ -1,10 +1,10 @@
 import { Clearable } from "./clearable";
 
 export class QueueSimpleArray<T> implements Clearable<T> {
-  private array: Array<T>;
-  private front: number;
-  private rear: number;
-  private size: number;
+  protected array: Array<T>;
+  protected front: number;
+  protected rear: number;
+  protected size: number;
 
   constructor(capacity: number) {
     this.array = new Array(capacity);

@@ -2,7 +2,7 @@ import { Clearable } from "./clearable";
 import { LinkedList } from "./linked-list";
 
 export class StackLinkedList<T> implements Clearable<T> {
-  private list: LinkedList<T>;
+  protected list: LinkedList<T>;
 
   constructor() {
     this.list = new LinkedList<T>();

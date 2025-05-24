@@ -46,7 +46,7 @@ export class BinarySearchTree<T> extends BaseTree<T> implements Clearable<T> {
    * @param value The value to be removed
    * @returns None
    */
-  remove(value: T): void {
+  public remove(value: T): void {
     this.root = this.removeNode(this.root, value);
   }
 
