@@ -97,4 +97,16 @@ describe("LinkedList", () => {
     expect(linkedList.remove(0)).toBe("First");
     expect(linkedList.getSize()).toBe(0);
   });
+
+  test("clear empties the list", () => {
+    linkedList.addLast("A");
+    linkedList.addLast("B");
+    linkedList.addLast("C");
+    expect(linkedList.getSize()).toBe(3);
+    linkedList.clear();
+    expect(linkedList.getSize()).toBe(0);
+    expect(() => linkedList.getFirst()).toThrow(RangeError);
+    expect(() => linkedList.getLast()).toThrow(RangeError);
+    expect(() => linkedList.get(0)).toThrow(RangeError);
+  });
 });
