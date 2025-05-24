@@ -1,7 +1,7 @@
 import { Clearable } from "./clearable";
 import { LinkedList } from "./linked-list";
 
-export class LinkedListStack<T> implements Clearable<T> {
+export class StackLinkedList<T> implements Clearable<T> {
   private list: LinkedList<T>;
 
   constructor() {

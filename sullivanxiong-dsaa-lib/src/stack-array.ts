@@ -1,6 +1,6 @@
 import { Clearable } from "./clearable";
 
-export class SimpleArray<T> implements Clearable<T> {
+export class StackSimpleArray<T> implements Clearable<T> {
   private stack: T[];
 
   constructor() {
