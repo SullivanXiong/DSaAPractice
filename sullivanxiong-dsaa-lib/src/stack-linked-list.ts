@@ -59,6 +59,10 @@ export class StackLinkedList<T> implements Clearable<T> {
     return this.list.getSize();
   }
 
+  getList(): LinkedList<T> {
+    return this.list;
+  }
+
   /**
    * Clear the stack.
    */

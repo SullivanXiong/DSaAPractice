@@ -53,6 +53,10 @@ export class StackSimpleArray<T> implements Clearable<T> {
     return this.stack.length;
   }
 
+  getList(): T[] {
+    return this.stack;
+  }
+
   /**
    * Clear the stack
    *
