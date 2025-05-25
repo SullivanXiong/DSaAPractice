@@ -3,12 +3,13 @@ import DoublyLinkedList from "./doubly-linked-list";
 import { LinkedList } from "./linked-list";
 import { MaxHeap } from "./max-heap";
 import { MinHeap } from "./min-heap";
+import { QueueSimpleArray } from "./queue-array";
 import { QueueDoubleStack } from "./queue-double-stack";
 import { QueueLinkedList } from "./queue-linked-list";
 import { StackSimpleArray } from "./stack-array";
 import { StackLinkedList } from "./stack-linked-list";
 
-export {
+export = {
   BinarySearchTree,
   DoublyLinkedList,
   LinkedList,
@@ -16,6 +17,7 @@ export {
   MinHeap,
   QueueDoubleStack,
   QueueLinkedList,
+  QueueSimpleArray,
   StackLinkedList,
   StackSimpleArray,
 };
